@@ -1,22 +1,3 @@
-/**
- * Data structure suggested for a course.
- *
- * A course is represented as a plain object:
- * {
- *   id: number,            // unique identifier
- *   title: string,         // course title
- *   description: string,   // short description
- *   price: number,         // price in Ar (Malagasy Ariary)
- *   language: "en"|"fr"|"mg", // language the course is taught in
- *   technology: string,    // technology/topic tag (e.g. "javascript")
- *   level: "beginner"|"intermediate"|"advanced",
- *   image: string          // background image url for the thumbnail
- * }
- *
- * All courses are stored in a simple array (our "list of courses").
- * No database is required for this exercise.
- */
-
 const COURSES = [
   {
     id: 1,

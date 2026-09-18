@@ -20,7 +20,6 @@
 
   const LANG_NAMES = { en: "EN", fr: "FR", mg: "MG" };
 
-  // current filter state
   const state = {
     languages: new Set(), // empty = all languages
     technology: "all",
@@ -94,7 +93,6 @@
     let min = Number(priceMin.value);
     let max = Number(priceMax.value);
 
-    // keep handles from crossing
     if (min > max) {
       [min, max] = [max, min];
     }
@@ -143,7 +141,6 @@
     renderCourses();
   }
 
-  // ---------- events ----------
   langButtons.forEach((btn) => btn.addEventListener("click", () => handleLangClick(btn)));
 
   techSelect.addEventListener("change", () => {
@@ -170,7 +167,6 @@
 
   clearAllBtn.addEventListener("click", clearAll);
 
-  // ---------- init ----------
   populateTechnologies();
   updatePriceUI();
   renderCourses();
