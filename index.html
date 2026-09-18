@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalogue de cours</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="filters">
+    <div class="filter-group">
+      <label class="filter-label">Language</label>
+      <div class="lang-flags" id="langFlags">
+        <button type="button" class="flag-btn" data-lang="mg" title="Malagasy" aria-pressed="false">🇲🇬</button>
+        <button type="button" class="flag-btn" data-lang="fr" title="Français" aria-pressed="false">🇫🇷</button>
+        <button type="button" class="flag-btn" data-lang="en" title="English" aria-pressed="false">🇬🇧</button>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label" for="techSelect">Technology</label>
+      <select id="techSelect" class="filter-select">
+        <option value="all">All technologies</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label" for="levelSelect">Level</label>
+      <select id="levelSelect" class="filter-select">
+        <option value="all">All levels</option>
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="advanced">Advanced</option>
+      </select>
+    </div>
+
+    <div class="filter-group price-group">
+      <label class="filter-label">Price range <span id="priceLabel">0 Ar - 300 000 Ar</span></label>
+      <div class="range-slider">
+        <input type="range" id="priceMin" min="0" max="300000" step="5000" value="0">
+        <input type="range" id="priceMax" min="0" max="300000" step="5000" value="300000">
+        <div class="range-track"></div>
+        <div class="range-fill" id="rangeFill"></div>
+      </div>
+    </div>
+
+    <div class="filter-group search-group">
+      <label class="filter-label" for="searchInput">Search</label>
+      <input type="text" id="searchInput" class="filter-search" placeholder="Keywords...">
+    </div>
+
+    <button type="button" id="clearAll" class="clear-all">Clear all</button>
+  </header>
+
+  <main class="results">
+    <p class="results-count"><span id="resultsCount">0</span> courses found</p>
+    <div class="course-grid" id="courseGrid"></div>
+    <p class="no-results" id="noResults" hidden>No courses match your filters.</p>
+  </main>
+
+  <template id="courseCardTemplate">
+    <article class="course-card">
+      <div class="course-thumb">
+        <span class="badge badge-lang"></span>
+        <span class="badge badge-tech"></span>
+        <span class="badge badge-level"></span>
+      </div>
+      <h3 class="course-title"></h3>
+      <p class="course-price"></p>
+      <p class="course-desc"></p>
+      <div class="course-actions">
+        <button type="button" class="btn btn-outline">Learn more</button>
+        <button type="button" class="btn btn-filled">Add to cart</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="courses.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
